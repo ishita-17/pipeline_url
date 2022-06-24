@@ -1,4 +1,4 @@
-from pipeline.tasks import url_access
+from tasks import url_access
 import requests
 
 if __name__ == "__main__":
