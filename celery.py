@@ -3,4 +3,4 @@ from celery import Celery
 
 app = Celery('pipeline', 
              broker='pyamqp://guest@localhost//',
-             include=["pipeline.tasks.py"])  
+             include=["tasks.py"])  

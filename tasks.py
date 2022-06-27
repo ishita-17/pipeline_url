@@ -1,12 +1,14 @@
 from __future__ import absolute_import
 import json
 import pymongo
+import requests
 from celery import app
 
 #from celery.schedules import crontab
 
 @app.task
-def url_access(r):
+def url_access(url):
+    r = requests.get(url)
     
     d = json.loads(r.text)  #Converting string to dictionary
 
