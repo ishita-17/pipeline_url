@@ -1,7 +1,7 @@
 from __future__ import absolute_import
 import json
 import pymongo
-from app import app
+from celery import app
 
 #from celery.schedules import crontab
 
