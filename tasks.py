@@ -1,8 +1,11 @@
+#!/usr/bin/python3
+
 from __future__ import absolute_import
+from pipeline_url.celeryapp import app
+
 import json
 import pymongo
 import requests
-from celery import app
 
 #from celery.schedules import crontab
 

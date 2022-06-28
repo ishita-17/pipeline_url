@@ -1,4 +1,6 @@
-from tasks import url_access
+#!/usr/bin/python3
+
+from pipeline_url.tasks import url_access
 import requests
 
 if __name__ == "__main__":
