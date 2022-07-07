@@ -4,13 +4,13 @@ from pipeline_url.task.tasks import url_access
 import pymongo
 
 
+client = pymongo.MongoClient()  # Creating mongo client
+
+db = client["mydatabase"]
+
+coll = db["links"]
+
 if __name__ == "__main__":
-
-    client = pymongo.MongoClient()  # Creating mongo client
-
-    db = client["mydatabase"]
-
-    coll = db["links"]
 
     cursor = coll.find({})  # getting all links from collection
 

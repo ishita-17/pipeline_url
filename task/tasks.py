@@ -7,6 +7,12 @@ import pymongo
 import requests
 
 
+client = pymongo.MongoClient()
+
+mydb = client["mydatabase"]
+
+mycol = mydb["urls"]
+
 @app.task
 def url_access(url):
     print(url)
@@ -15,12 +21,6 @@ def url_access(url):
     d = json.loads(r.text)  # Converting string to dictionary
 
     items = d["result"]["items"]  # Getting dictionary of all items
-
-    client = pymongo.MongoClient()
-
-    mydb = client["mydatabase"]
-
-    mycol = mydb["urls"]
 
     for item in items:
         mycol.insert_one(item)  # Inserting each item in collection
